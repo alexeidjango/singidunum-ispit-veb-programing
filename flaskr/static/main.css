@@ -1,0 +1,89 @@
+html, body, div, p, h1, h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.m-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-flex-row {
+    flex-direction: row;
+}
+
+.nav-button {
+    display: inline-block;
+    min-width: 50px;
+    height: 18px;
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Helvetica;
+    padding: 10px;
+}
+
+.nav-button:hover {
+    background-color: #6e8abe;
+}
+
+#main-container {
+    max-width: 800px;
+}
+
+#header-container, #footer-container {
+    background-color: lightsteelblue;
+    min-height: 40px;
+    padding: 20px 0;
+}
+
+#nav-container {
+    flex-direction: row;
+    column-gap: 30px;
+    justify-content: space-evenly;
+    background-color: lightblue;
+    padding: 10px 0;
+}
+
+#content-container {
+    padding: 40px;
+    background-color: antiquewhite;
+}
+#footer-container {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Helvetica;
+}
+
+.form-element label {
+    display: block;
+    margin: 10px 0;
+}
+
+.form-element-inline label {
+    display: inline;
+    margin: 10px 0;
+}
+
+.form-element input[type="text"], .form-element textarea, .form-element select {
+    display: block;
+    margin-top: 5px;
+}
+
+.form-element input[type="text"], .form-element textarea {
+    width: 100%;
+}

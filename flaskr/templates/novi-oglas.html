@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div>
+    <h2>Novi oglas</h2>
+    <form id="main-form">
+      <div class="form-element">
+        <label>
+          Ime ljubimaca
+          <input type="text" name="pet_name" placeholder="Ime ljubimaca" />
+        </label>
+        <span class="error-message"></span>
+      </div>
+      <div class="form-element">
+        <label>
+          Rod
+          <select name="pet_gender">
+            <option value="cat">Macka</option>
+            <option value="cat">Pas</option>
+            <option value="cat">Zec</option>
+          </select>
+        </label>
+        <span class="error-message"></span>
+      </div>
+      <div class="form-element">
+        <label>
+          <input type="checkbox" name="has_chip"> Da li ima chip?
+        </label>
+      </div>
+      <div class="form-element form-element-inline">
+        <label>
+          <input type="radio" name="event_type" checked>Izgubljen
+        </label>
+        <label>
+          <input type="radio" name="event_type">Nađen
+        </label>
+      </div>
+      <div class="form-element">
+        <label>
+          Kontakt telefon
+          <input type="text" name="phone" placeholder="Broj telefona" />
+        </label>
+        <span class="error-message"></span>
+      </div>
+      <div class="form-element">
+        <label>
+          Ostali podaci
+          <textarea rows="4"></textarea>
+        </label>
+      </div>
+      <button type="submit">Posalji oglas</button>
+    </form>
+  </div>
+{% endblock %}

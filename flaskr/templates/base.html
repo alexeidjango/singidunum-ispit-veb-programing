@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2023203407 - projekt za ispit</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+  <script src="{{ url_for('static', filename='jquery-3.7.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>
+<div id="main-container" class="m-auto">
+  <header>
+    <div id="header-container">
+      <h1 class="text-center">
+        Izgubljeni i nađeni kućni ljubimci
+      </h1>
+    </div>
+  </header>
+  <nav>
+    <div id="nav-container" class="d-flex d-flex-row">
+      <a href="/" class="nav-button">Svi oglasi</a>
+      <a href="/novi-oglas" class="nav-button">Ostavi oglas</a>
+      <a href="/o-nama" class="nav-button">O projektu</a>
+    </div>
+  </nav>
+  <div id="content-container">
+    {% block content %}{% endblock %}
+  </div>
+  <footer>
+    <div id="footer-container">
+      Nesto sto se obicno pise u futeru sajta.
+    </div>
+  </footer>
+</div>
+</body>
+</html>
