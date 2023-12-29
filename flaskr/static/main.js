@@ -53,8 +53,23 @@ const handleFormSubmit = (e) => {
     'comments': form.elements.comments.value.trim(),
     'has_chip': form.elements.has_chip.checked
   }
-  return false;
+  const jsonData = JSON.stringify(data);
 
+  const req = new XMLHttpRequest();
+  req.onreadystatechange = () => {
+    if (req.readyState === XMLHttpRequest.DONE) {
+      if (req.status === 200 || req.status === 201) {
+        // const response = JSON.parse(req.responseText);
+        $("#form-container").replaceWith('<h2>Oglas je poslat!</h2><a href="/">Na pocetni ekran</a>');
+      } else {
+        $("#form-container").replaceWith('<h2 class="error-message">Doslo je do greske :(</h2><a href="/novi-oglas">Probajte ponovo!</a>');
+      }
+    }
+  };
+  req.open('POST', '/ajax/oglasi');
+  req.setRequestHeader('Content-Type', 'application/json');
+  req.send(jsonData);
+  return false;
 }
 
 window.onload = () => {

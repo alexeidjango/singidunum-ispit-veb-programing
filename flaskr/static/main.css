@@ -24,6 +24,10 @@ html, body, div, p, h1, h2 {
     flex-direction: row;
 }
 
+h2 {
+    padding-bottom: 10px;
+}
+
 .nav-button {
     display: inline-block;
     min-width: 50px;
@@ -49,6 +53,10 @@ html, body, div, p, h1, h2 {
     background-color: lightsteelblue;
     min-height: 40px;
     padding: 20px 0;
+}
+
+#header-container h1 {
+    color: #406458;
 }
 
 #nav-container {
@@ -112,10 +120,13 @@ button[type="submit"] {
     border: 1px solid red;
 }
 
-.form-element .error-message {
+.error-message {
     color: red;
-    font-style: italic;
     font-family: sans-serif;
+}
+
+.form-element .error-message {
+    font-style: italic;
     font-size: 12px;
 }
 
@@ -123,3 +134,4 @@ button[type="submit"] {
     /*display: block;*/
     margin-left: 5px;
 }
+
