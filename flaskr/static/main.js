@@ -61,7 +61,7 @@ const handleFormSubmit = (e) => {
     if (req.readyState === XMLHttpRequest.DONE) {
       if (req.status === 200 || req.status === 201) {
         // const response = JSON.parse(req.responseText);
-        const resultNode = `<div><h2>Oglas jde poslat!</h2>Evo sto smo poslali na server: 
+        const resultNode = `<div><h2>Oglas je poslat!</h2>Evo sto smo poslali na server: 
                                    <pre>${jsonData}</pre>
                                    A evo sto smo dobili: 
                                    <pre>${req.responseText}</pre>
