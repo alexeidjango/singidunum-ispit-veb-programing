@@ -10,7 +10,10 @@
 <body>
 <div id="main-container" class="m-auto">
   <header>
-    <div id="header-container">
+    <div id="header-container" class="d-flex d-flex-row">
+      <a href="/">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" />
+      </a>
       <h1 class="text-center">
         Izgubljeni i nađeni kućni ljubimci
       </h1>
@@ -28,7 +31,8 @@
   </div>
   <footer>
     <div id="footer-container">
-      Nesto sto se obicno pise u futeru sajta.
+      Nesto sto se obicno pise u futeru sajta, i obavezno kopirajt
+      (cak i kada firma ne postoji) - to je znak za posetioce da se sajt obnavlja...
     </div>
   </footer>
 </div>
