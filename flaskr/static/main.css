@@ -69,9 +69,16 @@ html, body, div, p, h1, h2 {
     font-family: Helvetica;
 }
 
+.form-element {
+    margin: 5px 0;
+}
 .form-element label {
     display: block;
-    margin: 10px 0;
+    margin-top: 10px;
+}
+
+.form-element-inline {
+    display: inline-block;
 }
 
 .form-element-inline label {
@@ -84,6 +91,35 @@ html, body, div, p, h1, h2 {
     margin-top: 5px;
 }
 
+.form-element input[type="text"], .form-element select {
+    min-height: 1.9em;
+}
+
 .form-element input[type="text"], .form-element textarea {
     width: 100%;
+}
+
+button[type="submit"] {
+    width: 150px;
+    height: 30px;
+}
+
+.form-element input.valid, .form-element select.valid, .form-element textarea.valid {
+    border: 1px solid green;
+}
+
+.form-element input.invalid, .form-element select.invalid, .form-element textarea.invalid {
+    border: 1px solid red;
+}
+
+.form-element .error-message {
+    color: red;
+    font-style: italic;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.form-element-inline .error-message {
+    /*display: block;*/
+    margin-left: 5px;
 }

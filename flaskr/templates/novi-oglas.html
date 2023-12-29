@@ -2,6 +2,7 @@
 {% block content %}
   <div>
     <h2>Novi oglas</h2>
+    <hr />
     <form id="main-form">
       <div class="form-element">
         <label>
@@ -19,21 +20,24 @@
             <option value="cat">Zec</option>
           </select>
         </label>
-        <span class="error-message"></span>
       </div>
       <div class="form-element">
         <label>
           <input type="checkbox" name="has_chip"> Da li ima chip?
         </label>
       </div>
+      <fieldset>
+        <legend>Sto se desilo?</legend>
       <div class="form-element form-element-inline">
         <label>
-          <input type="radio" name="event_type" checked>Izgubljen
+          <input type="radio" value="lost" name="event_type">Izgubljen
         </label>
         <label>
-          <input type="radio" name="event_type">Nađen
+          <input type="radio" value="found" name="event_type">Nađen
         </label>
+        <span class="error-message"></span>
       </div>
+      </fieldset>
       <div class="form-element">
         <label>
           Kontakt telefon
@@ -44,8 +48,9 @@
       <div class="form-element">
         <label>
           Ostali podaci
-          <textarea rows="4"></textarea>
+          <textarea rows="4" name="comments"></textarea>
         </label>
+        <span class="error-message"></span>
       </div>
       <button type="submit">Posalji oglas</button>
     </form>
