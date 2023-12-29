@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div>
+  <div id="about-container">
     <h2>O projektu</h2>
     <hr />
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consequuntur deserunt impedit laudantium tempora velit. Exercitationem incidunt minima nesciunt pariatur quasi saepe temporibus tenetur, ullam veniam voluptatem. Earum, nisi quis.
+    <p>
+      Ovaj projekat je napravlen isklucivo sa ciljom demonstracije.
+      Sastoji se od veoma jednostavnog servera na bazi Flask'a, i frontend-dela.
+    </p>
+    <p>
+      Posto je serverski deo napravlen isklucivo sa ciljom obezbeđenja demonstracije AJAX
+      zahteva, navigacije i koriscenja template'ov, uopste ne postoje ikakvoj
+      server-side validacije (što naravno nije prihvatlivo na projektu iz stvarnog zivota).
+    </p>
   </div>
 {% endblock %}

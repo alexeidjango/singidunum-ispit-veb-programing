@@ -178,3 +178,7 @@ button[type="submit"] {
     display: block;
     padding-bottom: 15px;
 }
+
+#about-container p {
+    padding: 10px;
+}
