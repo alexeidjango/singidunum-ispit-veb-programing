@@ -1,7 +1,8 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
+from .applogic import create_ad, list_ads
 
 def create_app(test_config=None):
     # create and configure the app
@@ -26,7 +27,10 @@ def create_app(test_config=None):
 
     @app.route('/')
     def index():
-        return render_template('list-oglasa.html')
+        ctx = {
+            'oglasi': list_ads()
+        }
+        return render_template('list-oglasa.html', **ctx)
 
     @app.route('/novi-oglas')
     def novi_oglas():
@@ -35,5 +39,13 @@ def create_app(test_config=None):
     @app.route('/o-nama')
     def o_nama():
         return render_template('o-nama.html')
+
+    @app.route('/ajax/oglasi', methods=['POST', ])
+    def oglasi():
+        data = request.json
+        # nema tu ikakve validacije uopste - zato sto ovo je iskljucivo demo
+        create_ad(**data)
+
+        return {}
 
     return app

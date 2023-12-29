@@ -51,7 +51,8 @@ const handleFormSubmit = (e) => {
     'phone': form.elements.phone.value.trim(),
     'event_type': form.elements.event_type.value,
     'comments': form.elements.comments.value.trim(),
-    'has_chip': form.elements.has_chip.checked
+    'has_chip': form.elements.has_chip.checked,
+    'pet_family': form.elements.pet_family.value
   }
   const jsonData = JSON.stringify(data);
 
