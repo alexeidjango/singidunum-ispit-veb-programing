@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
   <div>
-    <h1>List oglasa</h1>
+    <h2>List oglasa</h2>
+    <hr />
+    {% for oglas in oglasi %}
+      <div class="oglas-container">
+        <small class="d-block">{{ oglas.date_added.strftime('%d-%m-%Y %H:%M:%S')}}</small>
+        <p>
+          <strong>{% if oglas.event_type == "found" %}Pronađen{% else %}Izgubljen{% endif %}</strong> je: {{ oglas.pet_family }}
+        </p>
+        <p>
+          Zove se: {{ oglas.pet_name }}
+        </p>
+        <p>
+          Kontakt: <a href="tel://{{ oglas.phone }}">{{ oglas.phone }}</a>
+        </p>
+        <p>
+          {{ oglas.comments }}
+        </p>
+      </div>
+    {% endfor %}
   </div>
 {% endblock %}

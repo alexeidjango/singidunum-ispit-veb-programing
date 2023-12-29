@@ -23,7 +23,22 @@ def create_ad(**kwargs):
 def list_ads():
     conn = get_db_connection()
     cur = conn.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
-    cur.execute('SELECT pet_name, phone, event_type, comments, has_chip, pet_family FROM oglasi;')
+    cur.execute("""
+    SELECT  pet_name, 
+            phone, 
+            event_type, 
+            comments, 
+            has_chip, 
+            CASE 
+                WHEN pet_family = 'rabbit' THEN 'zec' 
+                WHEN pet_family = 'cat' THEN 'mačka' 
+                WHEN pet_family = 'dog' THEN 'pas' 
+                ELSE 'životinje' 
+            END pet_family,
+            date_added
+    FROM oglasi
+    ORDER BY date_added DESC
+    """)
     res = cur.fetchall()
     cur.close()
     conn.close()
