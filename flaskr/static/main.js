@@ -33,7 +33,7 @@ const validateForm = () => {
   const formData = getFormData();
   return [
     setValidity(petName, formData.pet_name.length > 0, "Unesite ime ljubimaca."),
-    setValidity(phone, phonePattern.test(formData.phone), "Telefonski broj mora da sadrzi samo brojevi, razmake i zagrade, a najmanje 6 cifara."),
+    setValidity(phone, phonePattern.test(formData.phone), "Telefonski broj moze da sadrzi samo brojevi, razmake, certice i zagrade, a najmanje 6 cifara."),
     setValidity($eventTypeContainer[0], formData.event_type, "Odaberite bar nesto."),
     setValidity(comments, formData.comments.length > 0, "Objasnite sta, gde i kako se desilo."),
   ].reduce((a, c) => (a && c), true);
@@ -54,14 +54,19 @@ const handleFormSubmit = (e) => {
     'has_chip': form.elements.has_chip.checked,
     'pet_family': form.elements.pet_family.value
   }
-  const jsonData = JSON.stringify(data);
+  const jsonData = JSON.stringify(data, null, 4);
 
   const req = new XMLHttpRequest();
   req.onreadystatechange = () => {
     if (req.readyState === XMLHttpRequest.DONE) {
       if (req.status === 200 || req.status === 201) {
         // const response = JSON.parse(req.responseText);
-        $("#form-container").replaceWith('<h2>Oglas je poslat!</h2><a href="/">Na pocetni ekran</a>');
+        const resultNode = `<div><h2>Oglas jde poslat!</h2>Evo sto smo poslali na server: 
+                                   <pre>${jsonData}</pre>
+                                   A evo sto smo dobili: 
+                                   <pre>${req.responseText}</pre>
+                                   <a href="/">Na pocetni ekran</a></div>`;
+        $("#form-container").replaceWith(resultNode);
       } else {
         $("#form-container").replaceWith('<h2 class="error-message">Doslo je do greske :(</h2><a href="/novi-oglas">Probajte ponovo!</a>');
       }

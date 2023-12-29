@@ -45,6 +45,6 @@ def create_app(test_config=None):
         data = request.json
         # nema tu ikakve validacije uopste - zato sto ovo je iskljucivo demo
         create_ad(**data)
-        return {}
+        return {"result": "ok"}
 
     return app
